@@ -1,0 +1,46 @@
+{
+  "name": "copaguia-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node src/seed.js",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "format": "prettier --write \"src/**/*.js\"",
+    "test": "jest"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "copaguia",
+    "turismo",
+    "negocios",
+    "reseñas",
+    "mapas",
+    "express",
+    "mongoose"
+  ],
+  "author": "David Machado",
+  "license": "MIT",
+  "description": "API REST para CopaGuia - Plataforma de turismo y directorio comercial de Copacabana, Antioquia. Incluye gestión de negocios, reseñas, búsqueda y mapas interactivos.",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "joi": "^18.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.0.0",
+    "winston": "^3.18.3"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.6.2"
+  }
+}
