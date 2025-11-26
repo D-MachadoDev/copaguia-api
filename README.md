@@ -146,20 +146,11 @@ LOG_LEVEL=debug
 ```
 
 **Generar JWT_SECRET seguro:**
-```bash
-node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
-```
 
 
 **MongoDB Atlas (Cloud)**
 
 Para usar MongoDB Atlas en lugar de una instancia local:
-
-```env
-MONGODB_URI=mongodb+srv://usuario:password@cluster.mongodb.net/copaguia?retryWrites=true&w=majority
-```
-
-
 
 ---
 
