@@ -1,26 +1,114 @@
+# ════════════════════════════════════════════════════════════════
+# NODE.JS
+# ════════════════════════════════════════════════════════════════
+
 # Dependencias
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Variables de entorno
+# ════════════════════════════════════════════════════════════════
+# VARIABLES DE ENTORNO
+# ════════════════════════════════════════════════════════════════
+
+# Archivos con secretos (NUNCA subir a Git)
 .env
 .env.local
-.env.production
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Logs
+# ════════════════════════════════════════════════════════════════
+# LOGS
+# ════════════════════════════════════════════════════════════════
+
+# Archivos de logs
 logs/
 *.log
+!logs/.gitkeep
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Sistema operativo
+# ════════════════════════════════════════════════════════════════
+# SISTEMA OPERATIVO
+# ════════════════════════════════════════════════════════════════
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# IDE
+# Linux
+*~
+
+# ════════════════════════════════════════════════════════════════
+# EDITORES / IDEs
+# ════════════════════════════════════════════════════════════════
+
+# Visual Studio Code
 .vscode/
-.idea/
+*.code-workspace
 
-# Build
+# JetBrains (WebStorm, IntelliJ)
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ════════════════════════════════════════════════════════════════
+# TESTING
+# ════════════════════════════════════════════════════════════════
+
+# Coverage
+coverage/
+*.lcov
+.nyc_output
+
+# ════════════════════════════════════════════════════════════════
+# BUILD
+# ════════════════════════════════════════════════════════════════
+
+# Archivos de compilación (si usas TypeScript)
 dist/
 build/
+*.tsbuildinfo
 
-# Tests
-coverage/
+# ════════════════════════════════════════════════════════════════
+# ARCHIVOS TEMPORALES
+# ════════════════════════════════════════════════════════════════
+
+# Uploads temporales
+uploads/
+temp/
+tmp/
+
+# Cache
+.cache/
+.parcel-cache/
+
+# ════════════════════════════════════════════════════════════════
+# OTROS
+# ════════════════════════════════════════════════════════════════
+
+# Lock files (opcional, depende del equipo)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

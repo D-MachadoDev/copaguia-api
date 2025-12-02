@@ -1,23 +1,30 @@
-import winston, { error } from 'winston';
+import winston from 'winston';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { time } from 'console';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const { combine, timestamp, printf, colorize } = winston.format;
+const { combine, timestamp, printf, colorize, errors } = winston.format;
 
 // Formato personalizado para los logs
-const logFormat = printf(({ level, message, timestamp }) => {
-  return `${timestamp} [${level}]: ${message}`;
+const logFormat = printf(({ level, message, timestamp, stack }) => {
+  return stack 
+    ? `${timestamp} [${level}]: ${message}\n${stack}`
+    : `${timestamp} [${level}]: ${message}`;
+});
+
+const consoleFormat = printf(({ level, message, timestamp, stack }) => {
+  return stack
+    ? `${timestamp} [${level}]: ${message}\n${stack}`
+    : `${timestamp} [${level}]: ${message}`;
 });
 
 // Configuración del logger
 const logger = winston.createLogger({
     level: process.env.LOG_LEVEL || 'info',
     format: combine(
-        error({ stack: true }),
+        errors({ stack: true }),
         timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
     ),
     transports: [
@@ -43,6 +50,7 @@ if (process.env.NODE_ENV !== 'production') {
                 colorize(),
                 timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
                 consoleFormat
+                
             )
         })
     );
